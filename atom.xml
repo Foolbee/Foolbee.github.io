@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://zheng-jiawen.github.io</id>
+    <title>Jiawen ZHENG</title>
+    <updated>2024-09-12T08:40:36.122Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://zheng-jiawen.github.io"/>
+    <link rel="self" href="https://zheng-jiawen.github.io/atom.xml"/>
+    <subtitle>郑嘉文的博客</subtitle>
+    <logo>https://zheng-jiawen.github.io/images/avatar.png</logo>
+    <icon>https://zheng-jiawen.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2024, Jiawen ZHENG</rights>
+    <entry>
+        <title type="html"><![CDATA[Transferable Tactile Transformers for Representation Learning Across Diverse Sensors and Tasks]]></title>
+        <id>https://zheng-jiawen.github.io/post/transferable-tactile-transformers-for-representation-learning-across-diverse-sensors-and-tasks/</id>
+        <link href="https://zheng-jiawen.github.io/post/transferable-tactile-transformers-for-representation-learning-across-diverse-sensors-and-tasks/">
+        </link>
+        <updated>2024-09-12T08:27:11.000Z</updated>
+        <content type="html"><![CDATA[<ul>
+<li>
+<p><strong>Abstract</strong></p>
+<blockquote>
+<p>This paper presents T3: Transferable Tactile Transformers, a framework</p>
+<p>for tactile representation learning that scales across multi-sensors and multi-tasks. T3 is designed to overcome the contemporary issue that camera-based tactile sensing is extremely heterogeneous, i.e. sensors are built into different form factors, and existing datasets were collected for disparate tasks. T3 captures the shared latent information across different sensor-task pairings by constructing a shared trunk transformer with sensor-specific encoders and task-specific decoders. The pre-training of T3 utilizes a novel Foundation Tactile (FoTa) dataset, which is aggregated from several open-sourced datasets and it contains over 3 million data points gathered from 13 sensors and 11 tasks. FoTa is the largest and most diverse dataset in tactile sensing to date and it is made publicly available in a unified format. Across various sensors and tasks, experiments show that T3 pre-trained with FoTa achieved zero-shot transferability in certain sensor-task pairings, can be further fine-tuned with small amounts of domain-specific data, and its performance scales with bigger network sizes. T3 is also effective as a tactile encoder for long horizon contact-rich manipulation. Results from sub-millimeter multi-pin electronics insertion tasks show that T3 achieved a task success rate 25% higher than that of policies trained with tactile encoders trained from scratch, or 53% higher than without tactile sensing. Data, code, and model checkpoints are open sourced at https://t3.alanz.info.</p>
+</blockquote>
+<p>这篇文章介绍了一个名为T3（Transferable Tactile Transformers，可转移触觉变换器）的框架，这是一个用于触觉表征学习的框架，能够跨多个传感器和任务进行扩展。T3旨在解决当前基于摄像头的触觉传感系统极不统一的问题，即传感器被集成在不同的设备中，而且现有的数据集是为不同的任务收集的。T3通过构建一个带有传感器特定编码器和任务特定解码器的共享主干变换器来捕捉不同传感器-任务配对中的共享潜在信息。<br>
+T3的预训练使用了一个名为Foundation Tactile（FoTa）的新数据集，这个数据集是从多个开源数据集中汇总而来，包含了来自13个传感器和11个任务的超过300万个数据点。FoTa是目前最大的、最多样化的触觉传感数据集，并且以统一的格式公开提供。在不同的传感器和任务上，实验表明，使用FoTa预训练的T3在某些传感器-任务配对中实现了零样本迁移性，可以通过少量特定领域的数据进行进一步微调，并且其性能随着网络规模的增大而提升。T3作为触觉编码器用于长期接触丰富的操作也非常有效。在亚毫米级多针电子插入任务中，T3实现的任务成功率比从零开始训练的触觉编码器高25%，比没有使用触觉传感的策略高出53%。</p>
+</li>
+<li>
+<p><strong>Conclusion</strong></p>
+<blockquote>
+<p>This paper presents T3, a large camera-based tactile sensing framework that transfers across multiple sensors and tasks; and FoTa, a tactile dataset that is by far the largest in quantity and most diverse in sensors and downstream tasks. Experiments show that T3 pre-trained with FoTa improves performance for various tasks, including longer-horizon manipulation tasks such as sub-millimeter electronics insertion, and that T3 transfers to a new sensor-task pairing with little fine-tuning.</p>
+<p>One limitation of the current training pipeline is that the FoTa dataset is unbalanced. Data collected with the 2 most popular sensors constitutes over 50% of the entire dataset. Therefore, the trained policy could also be biased towards those more popular sensors. Another limitation is that the</p>
+<p>current architecture of T3 focuses on per-image encoding and T3 is trained with explicit labels during pre-training II and fine-tuning. Representation learning on tactile image sequences with sparse or implicit labels can be a future direction of this work.</p>
+</blockquote>
+<p>该工作介绍了一个名为T3的大型基于相机的触觉传感框架，它可以跨多个传感器和任务进行转移；同时还介绍了名为FoTa的触觉数据集，这是迄今为止数量最多且在传感器类型和下游任务方面最多样化的数据集。实验表明，使用FoTa进行预训练的T3在包括微米级电子元件插入等长视野操作任务中提高了性能，并且T3在转移到新的传感器-任务配对时只需要很少的微调。</p>
+<p>当前的训练流程存在一些局限性。首先，FoTa数据集不平衡，其中最常用的两种传感器收集的数据占了整个数据集的50%以上。这意味着通过这些数据训练出的策略可能会对这些更受欢迎的传感器有所偏向。其次，目前T3架构主要关注单个图像的编码，并且在预训练II和微调阶段使用了明确的标签。未来的工作方向可以是针对触觉图像序列进行稀疏或隐含标签的表征学习。</p>
+</li>
+<li>
+<p><strong>Background</strong></p>
+<blockquote>
+<p>The tactile sensing modality has gained increasing popularity within the robotics community, by providing important fine-grained contact information for dexterous and contact-rich manipulation tasks, such as robot grasping [1, 2] and fabric manipulation [3, 4]. Camera-based tactile sensing [5], a sensing method that operates by embedding a camera beneath a soft elastomer to capture the fine-grained interactions with the environment, is among the most popular methods of tactile sensing for its higher resolution and lower cost. However, camera-based tactile sensors are extremely heterogeneous, and there has not been a converged sensor design widely adopted by the robotics community. Different tactile sensors can differ significantly in shapes, types and numbers of cameras, placement and colors of illumination, etc. Such inherent heterogeneity hinders roboticists from building a general-purpose tactile encoder that is transferable across different sensors and downstream tasks.</p>
+<p>Existing learning architectures and datasets focus on one specific sensor-task pairing, and when it comes to a newly emerged sensor or task, data recollection and training an encoder from scratch are often required. This issue harms learning efficiency in a more significant way in longer horizon</p>
+<p>tactile manipulation tasks, where the training of the tactile encoder is guided by a more sparse reward. Intuitively, although different tactile sensors produce vastly different tactile images and various tasks extract different information from a tactile input, there should be shareable latent information due to the inherent similarities in tactile sensing across sensors and tasks. Therefore, it is both technically viable and practically desirable to design an architecture capable of extracting such shared latent representations and transferring them across different sensor-task pairings.</p>
+</blockquote>
+<p>这段文字讨论了触觉传感技术在机器人领域越来越受到重视，因为它们能提供精细的接触信息，这对于需要灵巧和频繁接触的机器人任务（如抓取和布料处理）至关重要。文中特别提到了基于摄像头的触觉传感技术，这种技术通过在柔软的弹性体下嵌入摄像头来捕捉与环境的精细交互，因其高分辨率和低成本而广受欢迎。然而，由于触觉传感器之间存在极大的异质性，如形状、摄像头类型和数量、照明位置和颜色等差异，导致没有一个统一的传感器设计被广泛采用。这种异质性阻碍了机器人学家构建一个通用的触觉编码器，使其能够跨不同传感器和任务进行转移。<br>
+现有的学习架构和数据集通常针对特定的传感器-任务配对，当出现新的传感器或任务时，往往需要重新收集数据和从头开始训练编码器。这在需要长时间触觉操作任务中尤其影响学习效率，因为触觉编码器的训练是通过稀疏奖励来指导的。尽管不同的触觉传感器会产生截然不同的触觉图像，并且不同的任务会从触觉输入中提取不同的信息，但由于传感器和任务之间在触觉感知方面的固有相似性，应该存在可共享的潜在信息。因此，设计一个能够提取这些共享潜在表示并在不同传感器-任务配对之间进行转移的架构，无论在技术上还是实际应用中都是可行且有益的。</p>
+</li>
+<li>
+<p><strong>Introduction</strong></p>
+<blockquote>
+<p>In this work, we tackle the problem of heterogeneous tactile learning using unaligned tactile data, with the goal of learning a scalable representation that can be shared across different sensors and tasks. We first aggregate existing open-sourced tactile datasets and assemble the Foundation Tactile</p>
+<p>(FoTa) dataset, which is the largest and most diverse tactile dataset so far to the best of the authors’ knowledge. We then propose Transferable Tactile Transformers (T3) to learn a shared representation across multi-sensors and multi-tasks. T3 is constructed with sensor-specific encoders, a shared trunk, and task-specific decoders. Our experiments show that T3 pre-trained with FoTa achieves reasonable zero-shot transferability, it can be further fine-tuned with small domain-specific datasets, and its performance scales with bigger network sizes. We also demonstrate that T3 can be used as a tactile encoder for longer-horizon manipulation policies with 3 behavior cloning-based sub-millimeter level electronics insertion tasks. In summary, this paper proposes: Foundation Tactile (FoTa): a dataset containing 3, 083, 452 tactile images collected with 13</p>
+<p>sensors for 11 tasks in a unified format. It is aggregated with several of the largest open-sourced tactile datasets and additional data collected in-house by the authors. Transferable Tactile Transformers (T3): a neural network framework that learns a shared representation across all sensors and tasks in FoTa. Pre-trained weights are provided, and we demonstrate that T3 can be easily fine-tuned to a new task or a new sensor with few fine-tuning data.</p>
+</blockquote>
+<p>在这项工作中，研究者们处理了使用未对齐的触觉数据进行异构触觉学习的问题，目的是学习一种可扩展的表示，这种表示可以在不同传感器和任务之间共享。首先，他们整合了现有的开源触觉数据集，并构建了Foundation Tactile（FoTa）数据集，这是迄今为止作者所知的最大且最多样化的触觉数据集。然后，他们提出了可迁移的触觉变换器（T3），以学习跨多个传感器和任务的共享表示。T3由传感器特定的编码器、共享的主干网络和任务特定的解码器构成。实验显示，使用FoTa预训练的T3实现了合理的零样本迁移能力，可以进一步用小规模的特定领域数据集进行微调，并且性能随着网络规模的增大而提升。研究者们还证明了T3可以作为长视野操纵策略的触觉编码器，在三个基于行为克隆的亚毫米级电子插入任务中使用。总的来说，这篇论文提出了两个主要贡献：</p>
+<ol>
+<li>Foundation Tactile（FoTa）数据集：包含13个传感器在11个任务中收集的3,083,452个触觉图像，以统一的格式整合了几个最大的开源触觉数据集以及作者在内部收集的额外数据。</li>
+<li>可迁移触觉变换器（T3）：这是一个神经网络框架，学习了FoTa中所有传感器和任务的共享表示。提供了预训练的权重，并且证明了T3可以轻松地用少量微调数据调整到新任务或新传感器上。</li>
+</ol>
+</li>
+<li>
+<p><strong>Content</strong></p>
+<ol>
+<li>The FoTa Dataset</li>
+</ol>
+<blockquote>
+<p>We provide a large tactile dataset by aggregating existing public datasets as well as adding new data collected in-house. The FoTa dataset is provided in a unified, I/O efficient WebDataset [40] format. It is by far the largest and most diverse dataset for tactile perception, with 3, 083, 452 data points collected on 13 tactile sensors, and high-quality labels are provided for 11 tasks. Mixture of constituents of FoTa is illustrated in Fig. 2.a, and example tactile images from each sensor are shown in Fig. 2.b. Details and statistics about public datasets aggregated in FoTa as well as the pre-processing method are provided in Appendix A.1.</p>
+</blockquote>
+<p>这段内容介绍了一个名为“FoTa”的大型触觉数据集。这个数据集是通过整合现有的公开数据集，并添加了由研究团队自行收集的新数据来构建的。FoTa数据集以一种统一的、输入输出效率较高的WebDataset格式提供。它被认为是目前最大且种类最丰富的触觉感知数据集，包含了在13种触觉传感器上收集的3,083,452个数据点，并为11种不同的任务提供了高质量的标签。图2.a展示了FoTa数据集的组成部分混合情况，而图2.b则展示了每种传感器的一个触觉图像示例。附录A.1中提供了关于FoTa数据集中整合的公开数据集的详细信息及预处理方法。</p>
+<ol start="2">
+<li>Method</li>
+</ol>
+<ul>
+<li>
+<p>模型架构</p>
+<p>训练集来自 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>N</mi><mi>s</mi></msub></mrow><annotation encoding="application/x-tex">N_s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">s</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 个不同传感器的输入以及 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>N</mi><mi>t</mi></msub></mrow><annotation encoding="application/x-tex">N_t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 个不同的任务目标. 作者提出的T3架构，由 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>N</mi><mi>s</mi></msub></mrow><annotation encoding="application/x-tex">N_s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">s</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 个编码器（每一个编码器处理一个传感器的输入），<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>N</mi><mi>t</mi></msub></mrow><annotation encoding="application/x-tex">N_t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 个解码器（每一个解码器处理一类下游任务）以及一个共享的主干网络（<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi><mi>r</mi><mi>u</mi><mi>n</mi><mi>k</mi></mrow><annotation encoding="application/x-tex">Trunk</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">u</span><span class="mord mathdefault">n</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span>）。其中编码器与主干网络均使用经典的ViT架构，而解码器结构则由具体的下游任务决定（例如对于MAE的掩码重建任务，采用ViT作为解码器架构；而对于姿态估计任务，采用ResNet+MLP作为解码器架构；而对于分类任务，则采用简单的MLP作为解码器架构）。<br>
+<img src="https://zheng-jiawen.github.io/post-images/1726129724403.png" alt="" loading="lazy"></p>
+</li>
+<li>
+<p>学习目标</p>
+<p>对于每一种特定的任务<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>j</mi><mo>∈</mo><mo>[</mo><mn>1</mn><mo separator="true">,</mo><msub><mi>N</mi><mi>t</mi></msub><mo>]</mo></mrow><annotation encoding="application/x-tex">j \in [1, N_t]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.85396em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">]</span></span></span></span>，都安排一类特定的损失函数<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>L</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">L_j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault">L</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span>，同时不同类别的任务要求不同的触觉感知图作为输入。举例来说，对于简单的物体分类以及材料分类任务，其只需要一份触觉感知图像作为输入，而同时姿态估计任务就需要两张触觉感知图像作为输入，标记为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>X</mi><mn>1</mn></msup><mo separator="true">,</mo><msup><mi>X</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">X^1, X^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.008548em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span>，因为预测目标是两个实体间的相对姿态。对此，将多个触觉感知输入分别通过各自的编码器以及共享的主干网络处理后，将多个嵌入表示进行拼接，最后传递到对应的解码器，这个过程可以表示如下：</p>
+<p class='katex-block katex-error' title='ParseError: KaTeX parse error: Can&#039;t use function &#039;$&#039; in math mode at position 53: …(Enc_i(X_i))))
+$̲$'>loss(X_i, Y_j) = L_j(Y_j, Dec_j(Trunk(Enc_i(X_i))))
+$$</p>
+<p>loss([X_i^{1}, X_i^{2}], Y_j) = L_j(Y_j, Dec_j(Trunk(Enc_i(X_i^{1})) \oplus Trunk(Enc_i(X_i^{2})) ))</p>
+<p class='katex-block katex-error' title='ParseError: KaTeX parse error: Can&#039;t use function &#039;$&#039; in math mode at position 198: …vit-base-16）解码器$̲Dec_0$ 来完成从被部分遮…'>
+据此，整个训练过程分为一个包含两个阶段的预训练过程以及一个可选的微调过程。将预训练划分为两个阶段，这是为了提高数据利用效率，同时达到局部惊喜理解和全局语义理解的双重目的。
+
+- 预训练阶段 **I**：基于MAE的自监督训练
+  
+  该阶段会使用数据集中的所有数据，包括了一些没能被标注的数据，以及一些带有语义级别标注的数据。使用一个特定的ViT（8层，类似于vit-base-16）解码器$Dec_0$ 来完成从被部分遮蔽的图像中重建图像的任务，并且该解码器被不同的传感器输入共享。
+  
+- 预训练阶段**II**：基于标签的监督训练
+  
+  对于每个独立的任务$j \in [1, N_t]$ ，都有一个特定的解码器$Dec_j$以及损失函数$L_j$。在文章中，作者为此预训练阶段定义了10个任务。
+  
+  其中，分类任务包括了物体分类，材质分类，织物平滑度、毛绒度以及织物类型分类。每种分类任务均使用多层感知机网络作为解码器，并以交叉熵作为损失函数。
+  
+  另外，回归任务包括SE（3）相对姿态估计，使用ResNet + MLP组合的结构作为解码器，并以均方误差作为损失函数
+  
+- 微调阶段（可选）
+  
+</p>
+</li>
+</ul>
+<p>作者将通过实验确定如何回答下列问题：</p>
+<ul>
+<li>
+<p>如何高效训练模型以及预训练对于模型性能提升到底有何影响？</p>
+</li>
+<li>
+<p>预训练的T3模型能否胜任zero-shot零样本迁移任务？</p>
+</li>
+<li>
+<p>FoTa数据集是否对于该类应用场景提供较为有意义的改进？</p>
+</li>
+</ul>
+<p>首先，探究预训练以及模型参数量对于模型性能的影响，组织4种参数量规格的同构模型，tiny，small，medium，large；对于每一种参数配置，都进行3种不同的训练策略，train from scratch，finetune from pretrain I，finetune from pretrain I &amp; II，测试任务为物体六分类任务，使用两个传感器数据集上的平均top-1准确率作为评价指标。<br>
+<img src="https://zheng-jiawen.github.io/post-images/1726129769370.png" alt="" loading="lazy"></p>
+<p>可以见到，预训练对于模型的性能提升影响显著，在模型参数量较大的情况下尤其明显。同时，模型在medium尺寸以及large尺寸的参数量条件下，性能表现差异并不显著。</p>
+<p>接着，对于预训练阶段I中MAE的mask ratio超参数，也进行了相应的消融实验。实验发现，不同的mask ratio在下游微调任务中性能表现的方差较小（即差异并不显著），但相对的，mask ratio在80%的情况下，模型表现出了最好的性能（这一点其实同MAE原论文中的消融实验结果吻合）。</p>
+<figure data-type="image" tabindex="1"><img src="https://zheng-jiawen.github.io/post-images/1726129933375.png" alt="" loading="lazy"></figure>
+<p>然后，作者团队探究了预训练的T3模型应用于零样本迁移的其他任务（数据来自不同的传感器）的性能表现，对照组则采用微调方式进行适应性训练。实验中选用两个传感器的数据集，以及两类下游任务（物体分类以及姿态估计），同时，预训练中并未将两类数据集的编码器进行过合并训练，即预训练均在单个任务上完成。实验结果表示，在分类任务中，零样本迁移的表现仅仅略微好过随机猜测；但是在姿态估计任务中，零样本迁移的测试结果相对于简单的均值预测有了较大的提升。在此基础上，微调后的模型在分类任务的表现中，准确率提高了17%，姿态估计任务中，在DenseTact 2.0数据集上的root mean squared error (RMSE)误差降低了5.5mm。对于GelSight Svelte sensor上的数据，微调前后的模型表现差异不大并且已经接近最优。该部分实验结果来看，该工作所提方法在某些传感器输入数据上确实可以实现零样本迁移，但同时较小程度的微调会带来更好的表现。</p>
+<figure data-type="image" tabindex="2"><img src="https://zheng-jiawen.github.io/post-images/1726129945086.png" alt="" loading="lazy"></figure>
+<p>最后，该团队探究了T3在机器人长期操控任务中的表现，该部分与本人研究方向以及内容相关性较弱，故直接摘抄。</p>
+<blockquote>
+<p>Tactile sensing can be especially helpful in contact-rich manipulation tasks. Numerous human studies have shown that the sense of touch is important for humans to perform delicate manipulation tasks such as surgery [46, 47]. However, most state-of-the-art tactile manipulation research opted to train a tactile encoder from scratch, with fresh data collected with the specific sensor-task pairing, due to the lack of a pre-trained tactile encoder. In the case of long-horizon multi-modal manipulation tasks, training from scratch is often inefficient, due to the sparseness of trajectory rewards and the number of components that need to be trained (e.g. modality encoders and policy networks) especially in many reinforcement learning and behavior cloning applications such as [48, 9]</p>
+<p>To investigate whether a pre-trained T3 helps to bridge this gap, we designed a robotic precision insertion task with behavior cloning. The goal of this task is to insert 3 electronics parts: a 3-pin toggle switch, a 12-pin double-stack USB port, and a 17-pin VGA connector, onto a PCB with corresponding mounting holes to each component. This task requires high precision, where the clearance between the holes on the PCB and the pins on the parts is only 0.4mm. Achieving this precision requires active exploration with tactile feedback. In real-world applications, relying on vision alone is often insufficient due to heavy occlusion.</p>
+<p>Our experiment setup consists of two GelSight Wedge tactile sensors mounted on a parallel jaw ripper, which is attached to the end-effector of a 7-DoF Franka Emika Panda robot, a PCB board fixed at a known location on the workbench, the 3 electronics parts, and a RGB camera on the side of the workbench. An illustration of the setup is shown in Fig. 4 a and the parts are shown in Fig. 4.b. Data is collected by controlling the robot in &quot;guide mode&quot;, i.e. under zero stiffness control, and a human operator manually grabs and moves the end-effector until the part is fully inserted. Randomization is applied at the grasping pose during data collection. We train and evaluate 3 policies: a baseline policy without tactile input, a policy with tactile input encoded by a neural network trained from scratch, and a policy with tactile input encoded by T3. Besides tactile inputs, all 3 policies have access to the same robot state modality encoded by a MLP, and external vision modality encoded by a pre-trained ResNet18. All three policies take observations of the current step as inputs and predict a 3-DoF action which the robot executes at the next time step. At inference time, the robot executes predicted 3-DoF actions in about 2Hz for up to 30 steps. An episode is deemed successful if the robot successfully inserts the component within 30 steps. The success rate and the average steps taken of successful episodes across 15 episodes are reported in Fig. 4.c. The results show that (1) the tactile modality is vital for this electronics insertion task, where the vision-only policy failed all tests to insert the two more challenging parts; (2) using a pre-trained T3 as the tactile encoder for this policy helped further improve the overall performance, where the task success rate is higher across all three parts; (3) T3 also helped to reduce the number of tactil exploration steps needed to insert a part.</p>
+</blockquote>
+<ol start="4">
+<li>评价</li>
+</ol>
+<p>总的来说，该文章提出的方法并不算新颖，有种类似于MOE的感觉，但是也不失为一种多模态特征融合的思路，可供后续参考；后续如果考虑与视觉信息融合，利用预训练的强大的视觉模型（CLIP-ViT等），同时补充足够的新采集数据，不失为一个多模态感知领域的一个较好工作方向。</p>
+</li>
+</ul>
+]]></content>
+    </entry>
+</feed>
